@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+ <html>
+ <body>
+<button onclick="fun()">Start</button>
+<script>
+function fun() {
+var place = prompt("Where is queen" , "a1");
+ if(place.charCodeAt(0)>96&&place.charCodeAt(1)<106&&place.charCodeAt(1)<57&&place.charCodeAt(1)>48)
+ do
+  {
+    var move= parseInt(prompt("How long does queen go?",""));
+  var direction = prompt("How Should She move?","S");
+
+ 
+
+switch(direction) {
+  case "N":
+    if(((place.charCodeAt(1))+move)<57){
+    place=place.replace(String.fromCharCode(place.charCodeAt(1)),String.fromCharCode(place.charCodeAt(1)+move));
+	document.write(place+" ");
+
+}
+      else
+    document.write("In valid ");
+    break;
+  case "S":
+    if(((place.charCodeAt(1))-move)>48){
+        place=place.replace(String.fromCharCode(place.charCodeAt(1)),String.fromCharCode(place.charCodeAt(1)-move));
+		document.write(place+" ");
+
+}
+
+      else
+    document.write("In valid ");
+    break;
+    case "E":
+    if(((place.charCodeAt(0))+move)<106){
+        place=place.replace(String.fromCharCode(place.charCodeAt(0)),String.fromCharCode(place.charCodeAt(0)+move));
+		document.write(place+" ");
+
+		}
+      else
+    document.write("In valid ");
+    break;
+    case "W":
+    if((place.charCodeAt(0))-move>96){
+     place=place.replace(String.fromCharCode(place.charCodeAt(0)),String.fromCharCode(place.charCodeAt(0)-move));
+	 document.write(place+" ");
+
+}
+      else
+    document.write("In valid ");
+    break;
+    case "NE":
+    if(((place.charCodeAt(1))+move)<57&&((place.charCodeAt(0))+move)<106){
+	place=place.replace(String.fromCharCode(place.charCodeAt(0)),String.fromCharCode(place.charCodeAt(0)+move));
+   place=place.replace(String.fromCharCode(place.charCodeAt(1)),String.fromCharCode(place.charCodeAt(1)+move));
+   
+   document.write(place+" ");
+
+    }
+      else
+    document.write("In valid ");
+    break;
+    case "NW":
+    if(((place.charCodeAt(1))+move<57&&((place.charCodeAt(0))-move)>96)){
+	 place=place.replace(String.fromCharCode(place.charCodeAt(0)),String.fromCharCode(place.charCodeAt(0)-move));
+   place=place.replace(String.fromCharCode(place.charCodeAt(1)),String.fromCharCode(place.charCodeAt(1)+move));
+       
+		document.write(place+" ");
+
+    }  else
+    document.write("In valid ");
+    break;
+    case "SE":
+    if(((place.charCodeAt(1))-move)>48&&((place.charCodeAt(0))+move)<106){
+	 place=place.replace(String.fromCharCode(place.charCodeAt(0)),String.fromCharCode(place.charCodeAt(0)+move));
+           place=place.replace(String.fromCharCode(place.charCodeAt(1)),String.fromCharCode(place.charCodeAt(1)-move));
+            
+document.write(place+" ");
+
+    }
+    else
+    document.write("In valid ");
+    break;
+    case "SW":
+    if((place.charCodeAt(1))-move>48&&(place.charCodeAt(0))-move>96){
+	 place=place.replace(String.fromCharCode(place.charCodeAt(0)),String.fromCharCode(place.charCodeAt(0)-move));
+    place=place.replace(String.fromCharCode(place.charCodeAt(1)),String.fromCharCode(place.charCodeAt(1)-move));
+   
+	document.write(place+" ");
+
+    }
+    else
+    document.write("In valid ");
+    break;
+  
+}
+var exit = prompt("Do you want to continue(y/n)?","");
+if(exit=='n'){
+break;
+}
+}while(true);
+
+else{
+document.write("Wrong data try again\n");
+fun();
+}
+}
+</script>
+
+</body>
+</html>
+
